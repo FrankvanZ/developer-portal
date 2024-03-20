@@ -6,9 +6,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const shouldAnalyzeBundles = process.env.ANALYZE === true;
-
-//const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',

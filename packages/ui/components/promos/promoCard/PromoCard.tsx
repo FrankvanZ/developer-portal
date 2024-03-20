@@ -5,7 +5,7 @@ import Icon from '@mdi/react';
 import NextLink from 'next/link';
 import { PromoCardImage, PromoCardProps, SimplePromoCardProps } from './types';
 
-const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
+const PromoImage = ({ img }: PromoCardImage): JSX.Element => (
   <Image
     src={img.src}
     alt={img.alt || ''}
@@ -19,7 +19,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
 export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <Center>
     <LinkBox as={Card} direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'} layerStyle={'interactive.raise'}>
-      {isImageLeft && <PromoCardImage img={img} />}
+      {isImageLeft && <PromoImage img={img} />}
 
       <Stack>
         <CardBody display={'flex'} justifyContent={'space-between'} flexDirection={'column'} alignItems={'left'}>
@@ -39,7 +39,7 @@ export const PromoCard = ({ title, description, img, link, isImageLeft = true }:
       </Stack>
       {!isImageLeft && (
         <Hide below="md">
-          <PromoCardImage img={img} />
+          <PromoImage img={img} />
         </Hide>
       )}
     </LinkBox>
