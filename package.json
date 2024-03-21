@@ -7,8 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-daemon",
+    "build": "dotenvx run --env-file=.env.local --env-file=.env -- turbo run build",
+    "dev": "dotenvx run --env-file=.env.local --env-file=.env -- turbo run dev --no-daemon",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
@@ -25,5 +25,9 @@
     "turbo": "^1.12.2",
     "ui": "*"
   },
-  "packageManager": "npm@9.5.0^"
+  "packageManager": "npm@9.5.0^",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^0.26.0",
+    "dotenv-cli": "^7.4.1"
+  }
 }
