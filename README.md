@@ -39,9 +39,9 @@ The developer portal is built with Next.js, so you'll need to have Node.js insta
 
 #### Environment Variables
 
-The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
+The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
 
-The following variables should exist within the .env.local file:
+The following variables should exist within the .env file:
 
 ```
 NEXT_PUBLIC_PUBLIC_URL=
