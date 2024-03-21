@@ -1,6 +1,6 @@
 import { headingRank } from 'hast-util-heading-rank';
 import { toString } from 'hast-util-to-string';
-import { Root } from 'hastscript/lib/core';
+import { Root } from 'rehype-autolink-headings/lib';
 import { visit } from 'unist-util-visit';
 import { ExtractHeadingsConfig } from '../../interfaces/contentheading';
 
