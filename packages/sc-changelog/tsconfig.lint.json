@@ -1,0 +1,16 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": [
+    "lib", 
+    "serialization", 
+    "types", 
+    "utils",
+    "graphQl",
+    "changelogClient.ts",
+    "index.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

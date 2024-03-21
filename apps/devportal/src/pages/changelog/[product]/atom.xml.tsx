@@ -1,6 +1,6 @@
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import { CreateFeed } from '@lib/changelog/changelog-feeds';
-import { ChangelogEntriesByProduct } from 'sc-changelog/changelog';
-import GetProducts from 'sc-changelog/products';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { Product } from 'sc-changelog/types/product';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 
@@ -10,7 +10,9 @@ const FeedPage = () => null;
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const preview = context.preview ? context.preview : null;
-  const products = await GetProducts(preview).then((response: Product[]) => {
+  const client = new ChangelogClient(getEndpointAndToken(preview));
+
+  const products = await client.getProducts().then((response: Product[]) => {
     return response;
   });
 
@@ -18,7 +20,7 @@ export async function getServerSideProps(context: any) {
 
   if (currentProduct != null) {
     // Fetch data
-    const changelogEntryList = await ChangelogEntriesByProduct(preview, currentProduct?.id);
+    const changelogEntryList = await client.changelogEntriesByProduct(currentProduct?.id);
     const feed = await CreateFeed(changelogEntryList);
     //Set page headers
     context.res.setHeader('Content-Type', 'text/xml');

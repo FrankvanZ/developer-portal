@@ -1,5 +1,6 @@
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 import { getQueryArray, getQueryValue } from 'sc-changelog/utils/requests';
 
@@ -7,11 +8,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const products: string[] = getQueryArray(req.query.product);
   const changeTypes: string[] = getQueryArray(req.query.changeType);
   const isPreview = req.preview ? true : false;
+  const client = new ChangelogClient(getEndpointAndToken(isPreview));
 
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
 
-  await ChangelogEntriesPaginated(isPreview, limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
+  await client.changelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
     res.status(200).json(response);
   });
 };

@@ -7,8 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-daemon",
+    "build": "dotenvx run -- turbo run build",
+    "dev": "dotenvx run -- turbo run dev --no-daemon",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
@@ -16,14 +16,17 @@
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
   "devDependencies": {
-    "eslint": "^8.38.0",
+    "eslint": "^8.57.0",
     "eslint-config-custom": "*",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.29.1",
     "prettier": "latest",
     "sc-changelog": "*",
     "shx": "^0.3.4",
     "turbo": "^1.12.5",
     "ui": "*"
   },
-  "packageManager": "npm@9.5.0^"
+  "packageManager": "npm@9.5.0^",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^0.26.0"
+  }
 }

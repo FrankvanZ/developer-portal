@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export enum ProductName {
   ORDERCLOUD = 'OrderCloud',
   CDP = 'Sitecore CDP',
@@ -16,9 +17,12 @@ export enum ProductName {
   XP = 'Experience Platform',
   XM = 'Experience Manager',
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */
+
 
 export * from './changeType';
 export * from './common/media';
 export * from './product';
 export * from './sitecoreCloud';
 export * from './sitecoreProduct';
+

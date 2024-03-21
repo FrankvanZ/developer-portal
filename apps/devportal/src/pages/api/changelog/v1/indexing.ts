@@ -1,6 +1,7 @@
 import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelog/types/changeLogEntry';
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { getQueryValue } from 'sc-changelog/utils/requests';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import { removeHtmlTagsAndSpecialChars } from 'ui/lib/utils/stringUtil';
@@ -49,7 +50,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) 
 export default handler;
 
 async function GetEntries(list: IndexResult[], end: string, limit: string) {
-  const entryList: ChangelogEntryList<ChangelogEntry[]> = await ChangelogEntriesPaginated(false, limit, '', '', end);
+  const client = new ChangelogClient(getEndpointAndToken(false));
+  const entryList: ChangelogEntryList<ChangelogEntry[]> = await client.changelogEntriesPaginated(limit, '', '', end);
 
   entryList.entries.map((entry) => {
     list.push({

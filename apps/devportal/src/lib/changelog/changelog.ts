@@ -1,10 +1,20 @@
 import axios from 'axios';
+import { ChangelogClientAuthentication } from 'sc-changelog/changelogClient';
 import { ChangeType, Product } from 'sc-changelog/types';
 import useSWR, { Fetcher } from 'swr';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
 
+export function getEndpointAndToken(isPreview: boolean): ChangelogClientAuthentication {
+  const endpoint = isPreview ? process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY : process.env.SITECORE_CHONE_ENDPOINT_DELIVERY;
+  const token = isPreview ? process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW : process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY;
+  return {
+    endpoint: endpoint as string,
+    token: token as string,
+    isPreview: isPreview,
+  };
+}
 
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);

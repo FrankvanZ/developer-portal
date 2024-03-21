@@ -1,4 +1,5 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
@@ -8,7 +9,7 @@ import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import GetProducts from 'sc-changelog/products';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { Product } from 'sc-changelog/types';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import Hero from 'ui/components/common/Hero';
@@ -32,7 +33,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const product = context.params.product;
   const preview = context.preview ? context.preview : null;
-  const products = await GetProducts(preview).then((response: Product[]) => {
+  const client = new ChangelogClient(getEndpointAndToken(preview));
+
+  const products = await client.getProducts().then((response: Product[]) => {
     return response;
   });
 

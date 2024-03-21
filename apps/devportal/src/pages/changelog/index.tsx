@@ -1,4 +1,5 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
@@ -9,7 +10,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { SWRConfig } from 'swr';
 import Hero from 'ui/components/common/Hero';
 import { Option } from 'ui/components/dropdown/MultiSelect';
@@ -79,7 +80,8 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
 
 export async function getStaticProps(context: any) {
   const isPreview = context.preview ? context.preview : null;
-  const entries = await ChangelogEntriesPaginated(isPreview, '5', '', '', '');
+  const client = new ChangelogClient(getEndpointAndToken(isPreview));
+  const entries = await client.changelogEntriesPaginated('5', '', '', '');
 
   return {
     props: {

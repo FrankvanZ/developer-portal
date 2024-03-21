@@ -9,11 +9,12 @@ import YouTubeApi from 'ui/components/integrations/youtube/YouTube.api';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
 import SitecoreCommunityApi from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
 import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/integrations/sitecoreCommunity/sitecore-community.constants';
 import { searchForFile } from 'ui/lib/utils/fsUtils';
+import { getEndpointAndToken } from './changelog/changelog';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -113,7 +114,8 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   }
 
   if (meta.changelog) {
-    pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
+    const client = new ChangelogClient(getEndpointAndToken(false));
+    pageInfo.changelogEntries = (await client.changelogEntriesPaginated(meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);

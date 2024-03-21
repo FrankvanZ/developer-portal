@@ -1,4 +1,5 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -30,8 +31,7 @@ import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
-import GetProducts from 'sc-changelog/products';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
@@ -50,15 +50,16 @@ export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
   const isPreview = context.preview || false;
+  const client = new ChangelogClient(getEndpointAndToken(isPreview));
 
-  const products = await GetProducts(isPreview).then((response: Product[]) => {
+  const products = await client.getProducts().then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
-    changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
+    changelogEntry = await client.changelogEntryByTitle(entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,

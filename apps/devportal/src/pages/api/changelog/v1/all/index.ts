@@ -1,6 +1,7 @@
 // Interfaces
+import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
+import { ChangelogClient } from 'sc-changelog/changelogClient';
 import { ChangeType, Product } from 'sc-changelog/types';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import { getQueryArray } from 'sc-changelog/utils/requests';
@@ -17,7 +18,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, 
 export default handler;
 
 const getOverviewPerMonth: any = async (isPreview: boolean, products?: Product[], changes?: ChangeType[]) => {
-  const items = await GetSummaryLatestItemsByProductAndChangeType(isPreview, products?.join('|'), changes?.join('|'));
+  const client = new ChangelogClient(getEndpointAndToken(isPreview));
+
+  const items = await client.getSummaryLatestItemsByProductAndChangeType(products?.join('|'), changes?.join('|'));
   const entries: ChangelogEntrySummary[] = items.entries;
 
   // Group the entries by month

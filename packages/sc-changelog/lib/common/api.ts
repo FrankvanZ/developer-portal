@@ -1,15 +1,15 @@
 import axios from 'axios';
 import axiosThrottle from 'axios-request-throttle';
 
-export async function fetchAPI(query: string, preview?: boolean) {
+export async function fetchAPI(endpoint: string, token: string, query: string, preview?: boolean) {
   // Default to delivery environment
-  let endpoint: string = process.env.SITECORE_CHONE_ENDPOINT_DELIVERY as string;
-  let token: string = process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY as string;
+  //let endpoint: string = process.env.SITECORE_CHONE_ENDPOINT_DELIVERY as string;
+  //let token: string = process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY as string;
 
   if (preview) {
     // Use preview environment
-    endpoint = process.env.SITECORE_CHONE_ENDPOINT_PREVIEW as string;
-    token = process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW as string;
+    //endpoint = process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY as string;
+    //token = process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW as string;
     axiosThrottle.use(axios, { requestsPerSecond: 15 });
   }
 
