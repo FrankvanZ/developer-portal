@@ -7,9 +7,9 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
 import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/src/components/helpers';
+import { translateDateAsYearMonth } from 'ui/src/lib/utils/dateUtil';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];

@@ -1,6 +1,6 @@
 import { PageInfo } from '@lib/interfaces/page-info';
-import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
-import { SitecoreCommunityBlog, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
+import { StackExchangeFeed, YouTubeFeed } from 'ui/src/components/integrations';
+import { SitecoreCommunityBlog, SitecoreCommunityQuestions } from 'ui/src/components/integrations/sitecoreCommunity';
 
 type SocialFeedsProps = {
   pageInfo: PageInfo;

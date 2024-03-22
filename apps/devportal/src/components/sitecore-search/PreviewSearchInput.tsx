@@ -30,8 +30,8 @@ import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
 import { useCallback } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import ProductLogo from 'ui/components/common/ProductLogo';
-import { Product } from 'ui/lib/assets';
+import ProductLogo from 'ui/src/components/common/ProductLogo';
+import { Product } from 'ui/src/lib/assets';
 
 type ArticleModel = {
   id: string;

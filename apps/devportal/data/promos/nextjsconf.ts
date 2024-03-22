@@ -1,4 +1,4 @@
-import { PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from 'ui/src/components/promos';
 
 const data: PromoCardProps = {
   title: 'Vercel Next.js conference',

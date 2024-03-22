@@ -1,8 +1,8 @@
 {
   "name": "sc-changelog",
   "version": "0.0.0",
-  "main": "./index.ts",
-  "types": "./types/index.ts",
+  "main": "./src/index.ts",
+  "types": "./src/types/index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\""

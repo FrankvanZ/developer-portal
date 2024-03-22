@@ -1,6 +1,6 @@
 import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import { CreateFeed } from '@lib/changelog/changelog-feeds';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;

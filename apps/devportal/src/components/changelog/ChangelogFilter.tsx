@@ -1,7 +1,7 @@
 import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { useState } from 'react';
-import { Product } from 'sc-changelog/types';
-import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
+import { Product } from 'sc-changelog/src/types';
+import MultiSelect, { Option } from 'ui/src/components/dropdown/MultiSelect';
 
 type ChangelogFilterProps = {
   className?: string;

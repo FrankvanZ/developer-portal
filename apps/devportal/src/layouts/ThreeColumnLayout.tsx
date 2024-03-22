@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { CenteredContent } from 'ui/components/helpers';
+import { CenteredContent } from 'ui/src/components/helpers';
 import InPageNavSmall from '../components/navigation/InPageNavSmall';
 import { ContentHeading } from '../lib/interfaces/contentheading';
 import { Sidebar } from './Sidebar';

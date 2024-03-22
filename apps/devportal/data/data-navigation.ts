@@ -1,4 +1,4 @@
-import { Product } from "ui/lib/assets";
+import { Product } from 'ui/src/lib/assets';
 
 export interface NavItem {
   title: string;

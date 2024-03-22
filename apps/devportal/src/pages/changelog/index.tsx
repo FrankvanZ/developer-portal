@@ -10,12 +10,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
 import { SWRConfig } from 'swr';
-import Hero from 'ui/components/common/Hero';
-import { Option } from 'ui/components/dropdown/MultiSelect';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
+import Hero from 'ui/src/components/common/Hero';
+import { Option } from 'ui/src/components/dropdown/MultiSelect';
+import { CenteredContent, VerticalGroup } from 'ui/src/components/helpers';
+import { ButtonLink } from 'ui/src/components/links/ButtonLink';
 
 type ChangelogHomeProps = {
   fallback: any;

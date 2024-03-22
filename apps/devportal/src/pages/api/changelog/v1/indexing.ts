@@ -1,10 +1,10 @@
-import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { getQueryValue } from 'sc-changelog/utils/requests';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { removeHtmlTagsAndSpecialChars } from 'ui/lib/utils/stringUtil';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/src/types/changeLogEntry';
+import { getQueryValue } from 'sc-changelog/src/utils/requests';
+import { getChangelogEntryUrl } from 'sc-changelog/src/utils/urlBuilder';
+import { removeHtmlTagsAndSpecialChars } from 'ui/src/lib/utils/stringUtil';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 

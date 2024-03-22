@@ -3,17 +3,17 @@ import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PageParti
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import StackExchangeApi from 'ui/components/integrations/stackexchange/StackExchange.api';
-import TwitterApi from 'ui/components/integrations/twitter/Twitter.api';
-import YouTubeApi from 'ui/components/integrations/youtube/YouTube.api';
+import StackExchangeApi from 'ui/src/components/integrations/stackexchange/StackExchange.api';
+import TwitterApi from 'ui/src/components/integrations/twitter/Twitter.api';
+import YouTubeApi from 'ui/src/components/integrations/youtube/YouTube.api';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
-import SitecoreCommunityApi from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
-import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/integrations/sitecoreCommunity/sitecore-community.constants';
-import { searchForFile } from 'ui/lib/utils/fsUtils';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/src/components/integrations/sitecoreCommunity';
+import SitecoreCommunityApi from 'ui/src/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
+import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/src/components/integrations/sitecoreCommunity/sitecore-community.constants';
+import { searchForFile } from 'ui/src/lib/utils/fsUtils';
 import { getEndpointAndToken } from './changelog/changelog';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');

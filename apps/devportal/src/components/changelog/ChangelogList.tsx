@@ -3,11 +3,11 @@ import { buildQuerystring, entriesApiUrl, getChangeTypeOptions, getProductOption
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
-import { Product } from 'sc-changelog/types';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
+import { Product } from 'sc-changelog/src/types';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/src/types/changeLogEntry';
 import { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
-import { Option } from 'ui/components/dropdown/MultiSelect';
+import { Option } from 'ui/src/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';

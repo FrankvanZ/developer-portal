@@ -4,9 +4,9 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewslettersByYear } from '@lib/newsletter';
 import { getNewsletterStaticPaths, NewsletterPath } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/src/components/helpers';
+import { CategoryTileList, CategoryTileProps } from 'ui/src/components/lists';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

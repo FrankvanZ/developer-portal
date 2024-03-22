@@ -9,12 +9,12 @@ import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { Product } from 'sc-changelog/types';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { Product } from 'sc-changelog/src/types';
+import { getSlug, slugify } from 'sc-changelog/src/utils/stringUtils';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/src/components/helpers';
+import { ButtonLink } from 'ui/src/components/links/ButtonLink';
 
 type ChangelogProps = {
   currentProduct: Product;

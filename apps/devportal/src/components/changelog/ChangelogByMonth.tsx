@@ -1,10 +1,10 @@
 import { Card, CardBody, CardHeader, HStack, Heading, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
 import { useGetEntriesByProducts } from '@lib/changelog/hooks/useGetEntriesByProducts';
 import Link from 'next/link';
-import { Product } from 'sc-changelog/types';
-import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { Option } from 'ui/components/dropdown/MultiSelect';
+import { Product } from 'sc-changelog/src/types';
+import { ChangelogEntrySummary } from 'sc-changelog/src/types/changeLogEntry';
+import { getChangelogEntryUrl } from 'sc-changelog/src/utils/urlBuilder';
+import { Option } from 'ui/src/components/dropdown/MultiSelect';
 
 type ChangelogByMonthProps = {
   product?: Product;

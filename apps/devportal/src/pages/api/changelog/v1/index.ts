@@ -1,8 +1,8 @@
 import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-import { getQueryArray, getQueryValue } from 'sc-changelog/utils/requests';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/src/types/changeLogEntry';
+import { getQueryArray, getQueryValue } from 'sc-changelog/src/utils/requests';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);

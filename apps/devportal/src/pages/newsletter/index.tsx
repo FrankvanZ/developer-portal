@@ -6,10 +6,10 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getFirstXNewsletters } from '@lib/newsletter';
 import { getPageInfo } from '@lib/page-info';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, ContentSection } from 'ui/components/helpers';
-import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
-import { PromoCard } from 'ui/components/promos';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, ContentSection } from 'ui/src/components/helpers';
+import { CategoryTileList, CategoryTileProps } from 'ui/src/components/lists';
+import { PromoCard } from 'ui/src/components/promos';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

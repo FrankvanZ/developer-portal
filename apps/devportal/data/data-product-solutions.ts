@@ -1,4 +1,4 @@
-import { CategoryTileProps } from 'ui/components/lists';
+import { CategoryTileProps } from 'ui/src/components/lists';
 
 export const productSolutions: CategoryTileProps[] = [
   {

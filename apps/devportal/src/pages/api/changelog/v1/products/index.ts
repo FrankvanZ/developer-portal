@@ -1,9 +1,9 @@
 // Interfaces
 import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { Product } from 'sc-changelog/types';
-import { getQueryValue } from 'sc-changelog/utils/requests';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { Product } from 'sc-changelog/src/types';
+import { getQueryValue } from 'sc-changelog/src/utils/requests';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;

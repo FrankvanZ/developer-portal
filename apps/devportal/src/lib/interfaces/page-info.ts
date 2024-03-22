@@ -1,6 +1,6 @@
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { StackExchangeQuestion, Tweet, YouTubeVideo } from 'ui/components/integrations';
-import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from 'ui/components/integrations/sitecoreCommunity';
+import { ChangelogEntry } from 'sc-changelog/src/types/changeLogEntry';
+import { StackExchangeQuestion, Tweet, YouTubeVideo } from 'ui/src/components/integrations';
+import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from 'ui/src/components/integrations/sitecoreCommunity';
 import { ContentHeading } from './contentheading';
 
 type PageInfoCore = {

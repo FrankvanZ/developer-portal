@@ -2,8 +2,8 @@ import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef } from 'react';
-import { Product } from 'sc-changelog';
-import { useEngageTracker } from 'ui/components/integrations';
+import { Product } from 'sc-changelog/src/types';
+import { useEngageTracker } from 'ui/src/components/integrations';
 
 interface TrackPageViewProps {
   children: React.ReactNode;

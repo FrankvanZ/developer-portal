@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { ChangelogClientAuthentication } from 'sc-changelog/changelogClient';
-import { ChangeType, Product } from 'sc-changelog/types';
+import { ChangelogClientAuthentication } from 'sc-changelog/src/changelogClient';
+import { ChangeType, Product } from 'sc-changelog/src/types';
 import useSWR, { Fetcher } from 'swr';
-import { Option } from 'ui/components/dropdown/MultiSelect';
+import { Option } from 'ui/src/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
 

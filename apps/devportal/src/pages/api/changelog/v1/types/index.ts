@@ -1,8 +1,8 @@
 // Interfaces
 import { getEndpointAndToken } from '@/src/lib/changelog/changelog';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { ChangeType } from 'sc-changelog/types/changeType';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { ChangeType } from 'sc-changelog/src/types/changeType';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangeType[]>) => {
   const isPreview = req.preview ? true : false;

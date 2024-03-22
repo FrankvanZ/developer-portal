@@ -1,4 +1,4 @@
-import { GenericListData, GenericListItem } from 'ui/components/lists/genericList/types';
+import { GenericListData, GenericListItem } from 'ui/src/components/lists/genericList/types';
 
 const content: GenericListItem[] = [
   {

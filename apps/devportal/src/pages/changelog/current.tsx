@@ -3,9 +3,9 @@ import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
-import { LinkItem } from 'ui/components/cards';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, Row, VerticalGroup } from 'ui/components/helpers';
+import { LinkItem } from 'ui/src/components/cards';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, Row, VerticalGroup } from 'ui/src/components/helpers';
 
 export default function ChangelogCurrent() {
   return (

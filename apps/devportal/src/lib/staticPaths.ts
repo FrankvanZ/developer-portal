@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path, { join } from 'path';
-import { Product } from 'sc-changelog';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { slugify } from 'sc-changelog/utils/stringUtils';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { Product } from 'sc-changelog/src/types';
+import { slugify } from 'sc-changelog/src/utils/stringUtils';
 import { getEndpointAndToken } from './changelog/changelog';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');

@@ -1,9 +1,9 @@
 import { Badge, Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { TextLink } from 'ui/components/links/TextLink';
+import { ChangelogEntry } from 'sc-changelog/src/types/changeLogEntry';
+import { getSlug } from 'sc-changelog/src/utils/stringUtils';
+import { getChangelogEntryUrl } from 'sc-changelog/src/utils/urlBuilder';
+import { TextLink } from 'ui/src/components/links/TextLink';
 
 type ChangelogEntriesProps = CardProps & {
   entries: ChangelogEntry[];

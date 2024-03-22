@@ -4,13 +4,7 @@
     "outDir": "dist"
   },
   "include": [
-    "lib", 
-    "serialization", 
-    "types", 
-    "utils",
-    "graphQl",
-    "changelogClient.ts",
-    "index.ts"
+    "src"
   ],
   "exclude": ["node_modules", "dist"]
 }

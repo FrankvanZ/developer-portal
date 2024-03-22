@@ -1,4 +1,4 @@
-import { CTACardProps } from 'ui/components/promos';
+import { CTACardProps } from 'ui/src/components/promos';
 
 const data: CTACardProps = {
   title: 'Contact Us',

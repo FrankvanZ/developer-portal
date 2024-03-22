@@ -3,13 +3,13 @@ import { Prose } from '@nikolovlazar/chakra-ui-prose';
 //import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
+import { ChangelogEntry } from 'sc-changelog/src/types/changeLogEntry';
+import { getSlug } from 'sc-changelog/src/utils/stringUtils';
+import { getChangelogEntryUrl } from 'sc-changelog/src/utils/urlBuilder';
 
-import { Loading } from 'ui/components/common/Loading';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
-import SocialShare from 'ui/components/social/SocialShare';
+import { Loading } from 'ui/src/components/common/Loading';
+import { ButtonLink } from 'ui/src/components/links/ButtonLink';
+import SocialShare from 'ui/src/components/social/SocialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
 export type ChangeLogItemProps = {

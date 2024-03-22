@@ -2,7 +2,7 @@
 import { usePreview } from '@/src/context/PreviewContext';
 import { Alert, Badge, BoxProps, Button, HStack, Icon, Link, Tooltip } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry } from 'sc-changelog/src/types/changeLogEntry';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {

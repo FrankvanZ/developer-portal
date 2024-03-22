@@ -31,15 +31,15 @@ import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-import { ChangelogClient } from 'sc-changelog/changelogClient';
-import { Product } from 'sc-changelog/types';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
-import SocialShare from 'ui/components/social/SocialShare';
+import { ChangelogClient } from 'sc-changelog/src/changelogClient';
+import { Product } from 'sc-changelog/src/types';
+import { ChangelogEntry } from 'sc-changelog/src/types/changeLogEntry';
+import { getSlug, slugify } from 'sc-changelog/src/utils/stringUtils';
+import { getChangelogEntryUrl } from 'sc-changelog/src/utils/urlBuilder';
+import Hero from 'ui/src/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/src/components/helpers';
+import { ButtonLink } from 'ui/src/components/links/ButtonLink';
+import SocialShare from 'ui/src/components/social/SocialShare';
 
 type ChangelogProps = {
   currentProduct: Product;
