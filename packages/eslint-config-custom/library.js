@@ -10,12 +10,11 @@ module.exports = {
     "prettier", 
     "eslint-config-turbo", 
     "plugin:react/recommended",
-    "plugin:import/recommended",
     'plugin:react/jsx-runtime', 
     'plugin:@typescript-eslint/recommended', 
     'plugin:@next/next/recommended',
   ],
-  plugins: ["only-warn", "unused-imports"],
+  plugins: ['react', '@typescript-eslint', 'import'],
   globals: {
     React: true,
     JSX: true,
@@ -24,15 +23,11 @@ module.exports = {
     node: true,
   },
   settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
+    react: {
+      version: 'detect',
     },
   },
   rules: {
-    "import/no-unused-modules": [1, {"unusedExports": true}],
-    "unused-imports/no-unused-imports": "error",
     '@next/next/no-html-link-for-pages': 'off',
     "import/no-unused-modules": [1, {"unusedExports": true}],
     'react/jsx-key': 'off',
@@ -53,19 +48,9 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': 'off',
     // needed for NextJS's jsx without react import
     'react/react-in-jsx-scope': 'off',
-    'import/no-unused-modules': [1, { unusedExports: true }],
     'react/no-unknown-property': [2, { ignore: ['jsx', 'global'] }],
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    ".*.json",
-    "node_modules/",
-    "dist/",
-    ".next",
-    "!.*",
-    "*.d.ts"
-  ],
+  ignorePatterns: ['!.*', 'dist', 'node_modules', '*.d.ts'],
   overrides: [
     {
       files: ["*.js?(x)", "*.ts?(x)"],

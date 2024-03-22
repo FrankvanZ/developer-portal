@@ -4,16 +4,8 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: [
-    'turbo', 
-    'prettier', 
-    'eslint:recommended', 
-    'plugin:react/recommended', 
-    'plugin:react/jsx-runtime', 
-    'plugin:@typescript-eslint/recommended', 
-    'plugin:@next/next/recommended',
-    'plugin:import/recommended'
-  ],
+  extends: ['turbo', 'prettier', 'eslint:recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:@typescript-eslint/recommended', 'plugin:@next/next/recommended'],
+
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'off',
@@ -45,18 +37,17 @@ module.exports = {
     node: true,
     browser: true,
   },
-  plugins: ["only-warn"],
+  ignorePatterns: ['!.*', 'dist', 'node_modules', '.next'],
+  overrides: [],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint', 'import'],
   settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
+    react: {
+      version: 'detect',
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-  ],
-  overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
 };

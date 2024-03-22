@@ -8,7 +8,7 @@ type GuidedDemoProps = CardProps & {
   productName: string;
   productLogo?: string;
 };
-export const GuidedDemo = ({ demoId, linkText, productName, productLogo, ...rest }: GuidedDemoProps) => {
+export const GuidedDemo = ({ demoId, linkText, productName, productLogo }: GuidedDemoProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const product: Product = Product[productLogo as keyof typeof Product];
   return (

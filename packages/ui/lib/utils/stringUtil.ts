@@ -36,7 +36,7 @@ export function removeHtmlTagsAndSpecialChars(input: string): string {
   // Replace HTML special characters with their actual values
   cleanedString = cleanedString.replace(htmlSpecialCharsRegex, (match) => {
     // Check if the matched HTML special character exists in the map
-    if (htmlSpecialCharsMap.hasOwnProperty(match)) {
+    if (Object.prototype.hasOwnProperty.call(htmlSpecialCharsMap, match)) {
       return htmlSpecialCharsMap[match];
     } else {
       return match;
