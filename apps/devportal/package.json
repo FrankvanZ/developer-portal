@@ -18,6 +18,7 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
+    "test": "jest --passWithNoTests",
     "pre-commit": "lint-staged",
     "pre-push": "tsc --project tsconfig.json",
     "postbuild": "next-sitemap --config next-sitemap.config.js",

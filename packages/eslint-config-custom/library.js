@@ -50,7 +50,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/no-unknown-property': [2, { ignore: ['jsx', 'global'] }],
   },
-  ignorePatterns: ['!.*', 'dist', 'node_modules', '*.d.ts'],
+  ignorePatterns: ['!.*', 'dist', 'node_modules', '*.d.ts', '.next', "*.config.ts", '*.test.ts?(x)'],
   overrides: [
     {
       files: ["*.js?(x)", "*.ts?(x)"],

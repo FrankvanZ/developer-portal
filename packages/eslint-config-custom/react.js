@@ -37,7 +37,7 @@ module.exports = {
     node: true,
     browser: true,
   },
-  ignorePatterns: ['!.*', 'dist', 'node_modules', '.next'],
+  ignorePatterns: ['!.*', 'dist', 'node_modules', '.next', '*.config.ts', '*.test.ts?(x)'],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
